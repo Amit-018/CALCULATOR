@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+
+    #form{
+        text-align: center;
+        margin: 40px;
+        background-color: #88A47C;
+        height: 590px;
+        width: 420px;
+        border-radius: 22px;
+    }
+
+    #ee{text-align: right;
+    background-color: #42855B;
+    color: black;
+    border-radius: 10px;
+    width: 370px;
+    height: 70px;
+    font-size: 40px;
+    margin: 25px;
+    }
+
+    #q{
+        margin-left: 5px;
+        background-color: red;
+    }
+
+    button{
+        height: 80px;
+        width: 80px;
+        background-color:#181D31;
+        color: whitesmoke;
+        font-size: 40px;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    #ppp{
+        background-color: rgb(2, 124, 2);
+        width: 173px;
+    }
+
+    #v{
+        background-color: #181D31;
+        color: aliceblue;   
+    }
+
+    tt{
+        height: 100px;
+    }
+
+</style>
+<body>
+    <center>
+        <div id="form">
+        <input id="ee" type="text " placeholder="0">
+        <button id="q" onclick="del()">C</button>
+        <button id="q" onclick="del()">AC</button>
+        <button onclick="a('/')">÷</button>
+        <button onclick="a('*')">X</button><br>
+        <button onclick="a(7)">7</button>
+        <button onclick="a(8)">8</button>
+        <button onclick="a(9)">9</button>
+        <button onclick="a('-')">-</button><br>
+        <button onclick="a(4)">4</button>
+        <button onclick="a(5)">5</button>
+        <button onclick="a(6)">6</button>
+        <button onclick="a('+')">+</button>
+    <div id="u">
+        <button onclick="a(1)">1</button>
+        <button onclick="a(2)">2</button>
+        <button onclick="a(3)">3</button>
+        <button onclick="a(00)">00</button>
+    </div>
+        <div id="g">
+        <button onclick="a(0)">0</button>
+        <button onclick="a('.')">.</button>
+        <button id="ppp" onclick="result()">=</button>
+    </div>
+</div>
+    </center>
+    <script>
+        function a(n){
+            document.getElementById('ee').value += n;
+        }
+        function del(){
+            document.getElementById("ee").value = "";
+        }
+        function result(){
+            var ques = document.getElementById("ee").value;
+            document.getElementById("ee").value = eval(ques);
+        }
+    </script>
+</body>
+</html>
